@@ -51,13 +51,13 @@
 		<div class="result">
 			<div>
 				<form action="./BlackJack" method="get">
-					<button type="submit" style="WIDTH: 200px; HEIGHT: 40px">ANOTHER BATTLE</button>
+					<button type="submit">ANOTHER BATTLE</button>
 				</form>
 			</div>
 			<span class="mgr-50"></span>
 			<div>
-				<form action="Start.jsp" method="POST">
-					<button type="submit" style="WIDTH: 200px; HEIGHT: 40px">BACK TITLE</button>
+				<form action="index.jsp" method="POST">
+					<button type="submit">BACK TITLE</button>
 				</form>
 			</div>
 		</div>

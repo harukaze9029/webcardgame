@@ -48,11 +48,11 @@
 						</tr>
 					</tbody>
 				</table>
-				<input type="submit" value="CHANGE" style="WIDTH: 200px; HEIGHT: 40px" id="btn1">
+				<input type="submit" value="CHANGE" id="btn1">
 			</form>
 			<br>
 			<form action="./PokerResult" method="get">
-				<input type="submit" value="STAND" style="WIDTH: 200px; HEIGHT: 40px">
+				<input type="submit" value="STAND">
 			</form>
 		</div>
 		</div>
