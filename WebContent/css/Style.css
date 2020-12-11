@@ -28,6 +28,11 @@ button {	WIDTH: 200px; HEIGHT: 40px	}
 input.btn{	WIDTH: 200px; HEIGHT: 40px	}
 div {	text-align:center;	}
 body {
+	  color: #fff;
+  text-shadow: 1px 1px 0 #000,
+               -1px 1px 0 #000,
+               1px -1px 0 #000,
+               -1px -1px 0 #000;
 	background-image: url(../card/back.jpg);
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -36,6 +41,16 @@ body {
 	background-color: #52c234;
 	font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
 }
-.example2 {	padding: 0.5em 1em;	margin: 2em 0;	color: #2c2c2f;	background: #52c234;	}
+.example2 {	padding: 0.5em 1em;	margin: 2em 0;	background: #52c234;	}
 .mgr-50 {    margin-right : 50px;	}
 .mgr-20 {    margin-right : 20px;	}
+.box1{
+  margin: 1em 0;
+  padding: 0.2em;
+  background-color: #c5e1a5;
+  border: double 5px #66bb6a;
+}
+.resultback {
+	border: thick double #4CB32C;
+   background-color: rgba( 76, 179, 44, 0.55 );
+}

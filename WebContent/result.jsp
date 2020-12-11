@@ -14,13 +14,13 @@
 			<p class="example2">DEALER HAND</p>
 			<c:choose>
 				<c:when test="${comcount == -1}">
-					<h2>HOST BURST</h2>
+					<h2 class="box1">HOST BURST</h2>
 				</c:when>
 				<c:when test="${comcount == 21}">
-					<h1>BLACK JACK!!</h1>
+					<h1 class="box1">BLACK JACK!!</h1>
 				</c:when>
 				<c:otherwise>
-					<h2>HOST COUNT ${comcount}</h2>
+					<h2 class="box1">HOST COUNT ${comcount}</h2>
 				</c:otherwise>
 			</c:choose>
 			<c:forEach var="computer" items="${computer}">
@@ -31,13 +31,13 @@
 			<p class="example2">PLAYER HAND</p>
 			<c:choose>
 				<c:when test="${youcount == -1}">
-					<h2>YOU BURST</h2>
+					<h2 class="box1">YOU BURST</h2>
 				</c:when>
 				<c:when test="${youcount == 21}">
-					<h1>BLACK JACK!!</h1>
+					<h1 class="box1">BLACK JACK!!</h1>
 				</c:when>
 				<c:otherwise>
-					<h2>YOU COUNT ${youcount}</h2>
+					<h2 class="box1">YOU COUNT ${youcount}</h2>
 				</c:otherwise>
 			</c:choose>
 			<c:forEach var="player" items="${player}">

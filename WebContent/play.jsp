@@ -11,13 +11,13 @@
 	<div class="hand">
 		<div>
 			<p class="example2">DEALER HAND</p>
-			<h2>HOST COUNT ??</h2>
+			<h2 class="box1">HOST COUNT ??</h2>
 			<img src="card/card_${computer[0].suit}_${computer[0].rank}.png" class="card"/>
 			<img src="card/card_back.png" class="card"/>
 		</div>
 		<div>
 			<p class="example2">PLAYER HAND</p>
-			<h2>YOU COUNT ${youcount}</h2>
+			<h2 class="box1">YOU COUNT ${youcount}</h2>
 			<c:forEach var="player" items="${player}">
 				<img src="card/card_${player.suit}_${player.rank}.png" class="card"/>
 			</c:forEach>

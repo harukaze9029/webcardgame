@@ -9,7 +9,6 @@
 </head>
 <body>
 	<div>
-		<h1>Good luck to you!</h1>
 		<br>
 		<div class="result">
 			<div>
@@ -17,6 +16,8 @@
 				<form action="./BlackJack" method="get">
 					<button type="submit">BRACK JACK</button>
 				</form>
+				<br>
+				<div class="resultback">
 				<div>
 					<h2>Record</h2>
 				</div>
@@ -30,6 +31,7 @@
 				<div>
 					<c:if test="${battle.win > 0}">Win rate  ${rate}  %</c:if>
 				</div>
+				</div>
 			</div>
 			<span class="mgr-50"></span>
 			<div>
@@ -37,18 +39,21 @@
 				<form action="./Poker" method="get">
 					<button type="submit">POKER</button>
 				</form>
-				<div>
-					<h2>Record</h2>
-				</div>
-				<div><H3>
-					<span class="mgr-20">${wincn + losecn + drowcn}battles</span>
-					<c:if test="${wincn > 0}">${wincn}wins</c:if>
-					<c:if test="${losecn > 0}"> ${losecn}losses</c:if>
-					<c:if test="${drowcn > 0}"> ${drowcn}drows</c:if>
-					</H3>
-				</div>
-				<div>
-					<c:if test="${count.win > 0}">Win rate  ${ratep}  %</c:if>
+				<br>
+				<div class="resultback">
+					<div>
+						<h2>Record</h2>
+					</div>
+					<div><H3>
+						<span class="mgr-20">${wincn + losecn + drowcn}battles</span>
+						<c:if test="${wincn > 0}">${wincn}wins</c:if>
+						<c:if test="${losecn > 0}"> ${losecn}losses</c:if>
+						<c:if test="${drowcn > 0}"> ${drowcn}drows</c:if>
+						</H3>
+					</div>
+					<div>
+						<c:if test="${count.win > 0}">Win rate  ${ratep}  %</c:if>
+					</div>
 				</div>
 			</div>
 		</div>
