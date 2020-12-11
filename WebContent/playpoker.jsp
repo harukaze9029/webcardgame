@@ -19,7 +19,7 @@
 		</div>
 		<div class="mod_form">
 			<p class="example2">PLAYER HAND</p>
-			<form action="/WebCardGame/Poker" method="post">
+			<form action="./Poker" method="post">
 				<table>
 					<tbody>
 						<tr>
@@ -51,7 +51,7 @@
 				<input type="submit" value="CHANGE" style="WIDTH: 200px; HEIGHT: 40px" id="btn1">
 			</form>
 			<br>
-			<form action="/WebCardGame/PokerResult" method="get">
+			<form action="./PokerResult" method="get">
 				<input type="submit" value="STAND" style="WIDTH: 200px; HEIGHT: 40px">
 			</form>
 		</div>

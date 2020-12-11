@@ -28,13 +28,13 @@
 		<div class="result">
 
 			<div>
-				<form action="/WebCardGame/BlackJack" method="post">
+				<form action="./BlackJack" method="post">
 					<button  type="submit" style="WIDTH: 200px; HEIGHT: 40px">HIT</button>
 				</form>
 			</div>
 			<span class="mgr-50"></span>
 			<div>
-				<form action="/WebCardGame/BlackJackResult" method="get">
+				<form action="./BlackJackResult" method="get">
 					<button type="submit" style="WIDTH: 200px; HEIGHT: 40px">STAND</button>
 				</form>
 			</div>

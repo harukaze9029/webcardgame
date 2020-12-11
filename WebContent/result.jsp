@@ -50,7 +50,7 @@
 		</div>
 		<div class="result">
 			<div>
-				<form action="/WebCardGame/BlackJack" method="get">
+				<form action="./BlackJack" method="get">
 					<button type="submit" style="WIDTH: 200px; HEIGHT: 40px">ANOTHER BATTLE</button>
 				</form>
 			</div>
