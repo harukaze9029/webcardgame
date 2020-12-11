@@ -14,7 +14,7 @@
 			<div class="result">
 				<div>
 					<img src="card/BJ.jpg" style="WIDTH: 400px; HEIGHT: 235px" hspace="30">
-					<form action="/WebCardGame/BlackJack" method="get">
+					<form action="./BlackJack" method="get">
 						<button type="submit" style="WIDTH: 200px; HEIGHT: 40px">BRACK JACK</button>
 					</form>
 					<div>
@@ -31,7 +31,7 @@
 				</div>
 				<div>
 					<img src="card/royal.jpg" style="WIDTH: 400px; HEIGHT: 235px" hspace="30">
-					<form action="/WebCardGame/Poker" method="get">
+					<form action="./Poker" method="get">
 						<button type="submit" style="WIDTH: 200px; HEIGHT: 40px">POKER</button>
 					</form>
 					<div>
