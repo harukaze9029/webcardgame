@@ -33,9 +33,9 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-	background-color:#52c234;
+	background-color: #52c234;
 	font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
 }
-.example2 {	padding: 0.5em 1em;	margin: 2em 0;	color: #2c2c2f;	background: #cde4ff;	}
+.example2 {	padding: 0.5em 1em;	margin: 2em 0;	color: #2c2c2f;	background: #52c234;	}
 .mgr-50 {    margin-right : 50px;	}
 .mgr-20 {    margin-right : 20px;	}
