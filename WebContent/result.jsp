@@ -62,15 +62,13 @@
 			</div>
 		</div>
 		<div>
-		<h2>戦績<span class="mgr-50"></span>
-			${win + lose + drow}戦
-			<c:if test="${win > 0}">${win}勝</c:if><c:if test="${result == 'win'}">(+1)</c:if>
-			<c:if test="${lose > 0}">${lose}敗</c:if><c:if test="${result == 'lose'}">(+1)</c:if>
-			<c:if test="${drow > 0}">${drow}分</c:if><c:if test="${result == 'drow'}">(+1)</c:if>
+		<h2>Record<span class="mgr-50"></span>
+			${win + lose + drow}battles
+			<c:if test="${win > 0}">${win}wins</c:if><c:if test="${result == 'win'}">(+1)</c:if>
+			<c:if test="${lose > 0}"> ${lose}losses</c:if><c:if test="${result == 'lose'}">(+1)</c:if>
+			<c:if test="${drow > 0}"> ${drow}drows</c:if><c:if test="${result == 'drow'}">(+1)</c:if>
 		</h2>
 		</div>
-		<div>
-		勝率  ${rate}  %
-		</div>
+		<div>Win rate  ${rate}  %</div>
 	</body>
 </html>

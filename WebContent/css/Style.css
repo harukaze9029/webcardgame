@@ -1,22 +1,41 @@
-.mod_form form label{	cursor:pointer;	}
-.mod_form form input{	vertical-align:middle;	}
-.mod_form form table {	width: 100%;	}
-.mod_form form table th {	padding: 20px;  width:20%;  font-weight:bold;  color:#000;  vertical-align: top;	}
+.mod_form form label {	cursor:pointer;	}
+.mod_form form input {	vertical-align:middle;	}
+.mod_form form table  {	width: 100%;	}
+.mod_form form table th {
+	padding: 20px;  width:20%;
+	font-weight:bold;  color:#000;
+	vertical-align: top;
+}
 .mod_form form table td.taste label {	float: center;    width: 145px;	}
-.result{	justify-content: center;	display: flex;	}
-.hand{	justify-content: space-around;	display: flex;	flex-direction: row;	align-items: flex-start;	}
+.result {
+	justify-content: center;
+	display: flex;
+}
+.hand {
+	justify-content: space-around;
+	display: flex;	flex-direction: row;
+	align-items: flex-start;
+}
 .nochange_checkbox {    position: absolute;   opacity:0	}
 .nochange_checkbox + img {   border: 1px solid rgba( 0, 0, 0, 0 );	}
 .nochange_checkbox:checked + img {    border: 2px dashed red;	}
 .location_checkbox {    position: absolute;    opacity:0	}
 .location_checkbox + img {    border: 1px solid rgba( 0, 0, 0, 0 );	}
 .location_checkbox:checked + img {   border: 2px dashed red;  position: relative;    bottom: 20px;	}
-.card{	width: 136px;	height: 200px;	}
-.gameimg{	width: 400px;	height: 235px;	}
-button{	WIDTH: 200px; HEIGHT: 40px	}
-div{	text-align:center;	}
-body{	background-color:#52c234;	font-family: fantasy;	}
-.example2 {	padding: 0.5em 1em;	margin: 2em 0;	color: #2c2c2f;	background: #cde4ff;		}
-.example2 p {	margin: 0; 	padding: 0;	}
-.mgr-50{    margin-right : 50px;	}
-.mgr-20{    margin-right : 20px;	}
+.card {	width: 136px;	height: 200px;	}
+.trump {	width: 400px;	height: 235px;	}
+button {	WIDTH: 200px; HEIGHT: 40px	}
+input.btn{	WIDTH: 200px; HEIGHT: 40px	}
+div {	text-align:center;	}
+body {
+	background-image: url(../card/back.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color:#52c234;
+	font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
+}
+.example2 {	padding: 0.5em 1em;	margin: 2em 0;	color: #2c2c2f;	background: #cde4ff;	}
+.mgr-50 {    margin-right : 50px;	}
+.mgr-20 {    margin-right : 20px;	}
