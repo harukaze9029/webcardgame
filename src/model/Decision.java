@@ -6,7 +6,7 @@ public class Decision {
 	static int Count;
 	private int playerCountTotal;
 	private int hostCountTotal;
-	
+
 	public void Count(int playerCountTotal, int hostCountTotal) {
 		this.playerCountTotal = playerCountTotal;
 		this.hostCountTotal = hostCountTotal;
@@ -17,7 +17,7 @@ public class Decision {
 	public int getHostCountTotal() {
 		return hostCountTotal;
 	}
-	
+
 	public void setPlayerCountTotal(int playerCountTotal) {
 		this.playerCountTotal = playerCountTotal;
 	}
@@ -55,7 +55,7 @@ public class Decision {
 		}
 		return getPlayerCountTotal();
 	}
-	
+
 	public int DecisionHost(List<Card> hostCard) {
 		setHostCountTotal(0);
 		for(int i = 0; i < hostCard.size(); i++) {
@@ -86,15 +86,15 @@ public class Decision {
 		}
 		return getHostCountTotal();
 	}
-	
+
 	public String decisionbattles(){
 		String winlose;
 		if(getPlayerCountTotal() == getHostCountTotal()) {
-			winlose = "drow";
+			winlose = "Drow";
 		}else if(getPlayerCountTotal() > getHostCountTotal()) {
-			winlose = "win";
+			winlose = "Win";
 		}else if(getPlayerCountTotal() < getHostCountTotal()) {
-			winlose = "lose";
+			winlose = "Lose";
 		}else {
 			winlose = "ERROR";
 		}
