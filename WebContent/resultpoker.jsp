@@ -40,6 +40,7 @@
 				</form>
 			</div>
 		</div>
+		<div class="resultback">
 		<div>
 		<h2>Record<span class="mgr-50"></span>
 			${wincn + losecn + drowcn}battles
@@ -49,5 +50,6 @@
 		</h2>
 		</div>
 		<div>Win rate  ${ratep}  %</div>
+		</div>
 	</body>
 </html>

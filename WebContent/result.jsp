@@ -61,6 +61,7 @@
 				</form>
 			</div>
 		</div>
+		<div class="resultback">
 		<div>
 		<h2>Record<span class="mgr-50"></span>
 			${win + lose + drow}battles
@@ -70,5 +71,6 @@
 		</h2>
 		</div>
 		<div>Win rate  ${rate}  %</div>
+		</div>
 	</body>
 </html>
