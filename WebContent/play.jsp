@@ -2,12 +2,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>ブラックジャック</title>
-		<link rel="stylesheet" href="css/Style.css">
-	</head>
-	<body>
+<head>
+	<meta charset="UTF-8">
+	<title>ブラックジャック</title>
+	<link rel="stylesheet" href="css/Style.css">
+</head>
+<body>
 	<div class="hand">
 		<div>
 			<p class="example2">DEALER HAND</p>
@@ -22,23 +22,22 @@
 				<img src="card/card_${player.suit}_${player.rank}.png" class="card"/>
 			</c:forEach>
 		</div>
+	</div>
+	<br>
+	<br>
+	<div class="result">
+		<div>
+			<form action="./BlackJack" method="post">
+				<button  type="submit">HIT</button>
+			</form>
 		</div>
-		<br>
-		<br>
-		<div class="result">
-
-			<div>
-				<form action="./BlackJack" method="post">
-					<button  type="submit">HIT</button>
-				</form>
-			</div>
-			<span class="mgr-50"></span>
-			<div>
-				<form action="./BlackJackResult" method="get">
-					<button type="submit">STAND</button>
-				</form>
-			</div>
-			<span class="mgr-50"></span>
+		<span class="mgr-50"></span>
+		<div>
+			<form action="./BlackJackResult" method="get">
+				<button type="submit">STAND</button>
+			</form>
 		</div>
-	</body>
+		<span class="mgr-50"></span>
+	</div>
+</body>
 </html>

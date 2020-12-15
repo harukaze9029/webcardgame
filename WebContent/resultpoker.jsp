@@ -2,12 +2,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>ポーカー</title>
-		<link rel="stylesheet" href="css/Style.css">
-	</head>
-	<body >
+<head>
+	<meta charset="UTF-8">
+	<title>ポーカー</title>
+	<link rel="stylesheet" href="css/Style.css">
+</head>
+<body >
 	<div class="hand">
 		<div>
 			<p class="example2">親の手札</p>
@@ -24,23 +24,23 @@
 				<img src="card/card_${player.suit}_${player.rank}.png" class="card"/>
 			</c:forEach>
 		</div>
+	</div>
+	<div>
+		<h1>${result}</h1>
+	</div>
+	<div class="result">
+		<div>
+			<form action="./Poker" method="get">
+				<button type="submit">ANOTHER BATTLE</button>
+			</form>
 		</div>
 		<div>
-			<h1>${result}</h1>
+			<form action="index.jsp" method="POST">
+				<button type="submit">BACK TITLE</button>
+			</form>
 		</div>
-		<div class="result">
-			<div>
-				<form action="./Poker" method="get">
-					<button type="submit">ANOTHER BATTLE</button>
-				</form>
-			</div>
-			<div>
-				<form action="index.jsp" method="POST">
-					<button type="submit">BACK TITLE</button>
-				</form>
-			</div>
-		</div>
-		<div class="resultback">
+	</div>
+	<div class="resultback">
 		<div>
 		<h2>Record<span class="mgr-50"></span>
 			${wincn + losecn + drowcn}battles
@@ -48,8 +48,8 @@
 			<c:if test="${losecn > 0}"> ${losecn}losses</c:if><c:if test="${result == 'lose'}">(+1)</c:if>
 			<c:if test="${drowcn > 0}"> ${drowcn}drows</c:if><c:if test="${result == 'drow'}">(+1)</c:if>
 		</h2>
-		</div>
-		<div>Win rate  ${ratep}  %</div>
-		</div>
-	</body>
+	</div>
+	<div>Win rate  ${ratep}  %</div>
+	</div>
+</body>
 </html>

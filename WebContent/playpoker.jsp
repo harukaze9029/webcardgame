@@ -2,14 +2,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>ポーカー</title>
-		<link rel="stylesheet" href="css/Style.css">
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script type="text/javascript" src="css/from.js"></script>
-	</head>
-	<body>
+<head>
+	<meta charset="UTF-8">
+	<title>ポーカー</title>
+	<link rel="stylesheet" href="css/Style.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="css/from.js"></script>
+</head>
+<body>
 	<div class="hand">
 		<div>
 			<p class="example2">DEALER HAND</p>
@@ -55,6 +55,6 @@
 				<input type="submit" value="STAND" class="btn">
 			</form>
 		</div>
-		</div>
-	</body>
+	</div>
+</body>
 </html>

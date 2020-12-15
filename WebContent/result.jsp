@@ -3,14 +3,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>ブラックジャック</title>
-		<link rel="stylesheet" href="css/Style.css">
-	</head>
-	<body>
-		<div class="hand">
-			<div>
+<head>
+	<meta charset="UTF-8">
+	<title>ブラックジャック</title>
+	<link rel="stylesheet" href="css/Style.css">
+</head>
+<body>
+	<div class="hand">
+		<div>
 			<p class="example2">DEALER HAND</p>
 			<c:choose>
 				<c:when test="${comcount == -1}">
@@ -26,8 +26,8 @@
 			<c:forEach var="computer" items="${computer}">
 				<img src="card/card_${computer.suit}_${computer.rank}.png" class="card"/>
 			</c:forEach>
-			</div>
-			<div>
+		</div>
+		<div>
 			<p class="example2">PLAYER HAND</p>
 			<c:choose>
 				<c:when test="${youcount == -1}">
@@ -43,8 +43,8 @@
 			<c:forEach var="player" items="${player}">
 				<img src="card/card_${player.suit}_${player.rank}.png" class="card"/>
 			</c:forEach>
-			</div>
-			</div>
+		</div>
+	</div>
 		<div>
 			<h1>${result}</h1>
 		</div>
@@ -62,15 +62,15 @@
 			</div>
 		</div>
 		<div class="resultback">
-		<div>
-		<h2>Record<span class="mgr-50"></span>
-			${win + lose + drow}battles
-			<c:if test="${win > 0}">${win}wins</c:if><c:if test="${result == 'win'}">(+1)</c:if>
-			<c:if test="${lose > 0}"> ${lose}losses</c:if><c:if test="${result == 'lose'}">(+1)</c:if>
-			<c:if test="${drow > 0}"> ${drow}drows</c:if><c:if test="${result == 'drow'}">(+1)</c:if>
-		</h2>
-		</div>
-		<div>Win rate  ${rate}  %</div>
+			<div>
+				<h2>Record<span class="mgr-50"></span>
+				${win + lose + drow}battles
+				<c:if test="${win > 0}">${win}wins</c:if><c:if test="${result == 'win'}">(+1)</c:if>
+				<c:if test="${lose > 0}"> ${lose}losses</c:if><c:if test="${result == 'lose'}">(+1)</c:if>
+				<c:if test="${drow > 0}"> ${drow}drows</c:if><c:if test="${result == 'drow'}">(+1)</c:if>
+				</h2>
+			</div>
+			<div>Win rate  ${rate}  %</div>
 		</div>
 	</body>
 </html>
