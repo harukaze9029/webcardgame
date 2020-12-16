@@ -12,7 +12,7 @@
   <div id="wrapper">
 <main>
 	<div class="hand">
-		<div>
+		<div class="host">
 			<p class="example2">DEALER HAND</p>
 			<h2 class="box1">HOST COUNT ??</h2>
 			<div class="handback">
@@ -20,7 +20,7 @@
 			<img src="card/card_back.png" class="card"/>
 			</div>
 		</div>
-		<div>
+		<div class="player">
 			<p class="example2">PLAYER HAND</p>
 			<h2 class="box1">YOU COUNT ${youcount}</h2>
 			<div class="handback">

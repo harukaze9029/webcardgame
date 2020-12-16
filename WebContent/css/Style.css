@@ -82,6 +82,12 @@ footer {	margin-top: auto;	}
 	display: table;	flex-direction: row;
 	align-items: flex-start;
 }
+.host{
+	width: 100% ;
+}
+.player{
+	width: 100% ;
+}
 .trump {
 width: 100% ;
 }
