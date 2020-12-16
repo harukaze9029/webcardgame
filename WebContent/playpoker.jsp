@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="css/Style.css">
 	<script src="css/jquery-3.5.1.min.js"></script>
 	<script type="text/javascript" src="css/form.js"></script>
-	<meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 <body>
   <div id="wrapper">
