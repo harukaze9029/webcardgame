@@ -23,7 +23,7 @@
 .location_checkbox + img {    border: 1px solid rgba( 0, 0, 0, 0 );	}
 .location_checkbox:checked + img {   border: 2px dashed red;  position: relative;    bottom: 20px;	}
 .card {	width: 136px;	height: 200px;	}
-.scard{	width: 105px;	height: 160px;	}
+.scard{	width: 90px;	height: 140px;	}
 .trump {	width: 400px;	height: 235px;	}
 button {	WIDTH: 200px; HEIGHT: 40px	}
 input.btn{	WIDTH: 200px; HEIGHT: 40px	}
