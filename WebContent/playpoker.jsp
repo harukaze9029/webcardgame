@@ -10,6 +10,7 @@
 	<script type="text/javascript" src="css/form.js"></script>
 </head>
 <body>
+<main>
 	<div class="hand">
 		<div>
 			<p class="example2">DEALER HAND</p>
@@ -41,6 +42,9 @@
 				<input type="submit" value="STAND" class="btn">
 			</form>
 		</div>
+
 	</div>
+</main>
+<jsp:include page="include/footer.jsp"/>
 </body>
 </html>

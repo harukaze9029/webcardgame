@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="css/Style.css">
 </head>
 <body>
+<main>
 	<div class="hand">
 		<div>
 			<p class="example2">DEALER HAND</p>
@@ -47,14 +48,16 @@
 	<div>
 		<h1>${result}</h1>
 	</div>
-		<div class="result">
-			<div>
-				<form action="./BlackJack" method="get">
-					<button type="submit">ANOTHER BATTLE</button>
-				</form>
-			</div>
+	<div class="result">
+		<div>
+			<form action="./BlackJack" method="get">
+				<button type="submit">ANOTHER BATTLE</button>
+			</form>
+		</div>
 	<jsp:include page="include/Back.jsp"/>
 	</div>
 	<jsp:include page="include/BJresult.jsp"/>
+	</main>
+	<jsp:include page="include/footer.jsp"/>
 </body>
 </html>

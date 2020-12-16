@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="css/Style.css">
 </head>
 <body>
+<main>
 	<div class="hand">
 		<div>
 			<p class="example2">DEALER HAND</p>
@@ -37,7 +38,9 @@
 				<button type="submit">STAND</button>
 			</form>
 		</div>
-		<span class="mgr-50"></span>
+
 	</div>
+	</main>
+	<jsp:include page="include/footer.jsp"/>
 </body>
 </html>

@@ -8,6 +8,8 @@
 	<link rel="stylesheet" href="css/Style.css">
 </head>
 <body>
+  <div id="wrapper">
+<main>
 	<div class="result">
 		<div>
 			<img src="card/BJ.jpg" class="trump">
@@ -27,5 +29,8 @@
 			<jsp:include page="include/PKresult.jsp"/>
 		</div>
 	</div>
+</main>
+<jsp:include page="include/footer.jsp"/>
+</div>
 </body>
 </html>

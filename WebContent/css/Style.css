@@ -9,7 +9,7 @@
 .mod_form form table td.taste label {	float: center;    width: 145px;	}
 .result {
 	justify-content: center;
-	display: flex;
+
 }
 .hand {
 	justify-content: space-around;
@@ -28,8 +28,8 @@ button {	WIDTH: 200px; HEIGHT: 40px	}
 input.btn{	WIDTH: 200px; HEIGHT: 40px	}
 div {	text-align:center;	}
 body {
-	  color: #fff;
-  text-shadow: 1px 1px 0 #000,
+	color: #fff;
+	text-shadow: 1px 1px 0 #000,
                -1px 1px 0 #000,
                1px -1px 0 #000,
                -1px -1px 0 #000;
@@ -39,9 +39,18 @@ body {
 	background-attachment: fixed;
 	background-size: cover;
 	background-color: #52c234;
-	font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
+	font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans';
+}
+body,
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 .example2 {	padding: 0.5em 1em;	margin: 2em 0;	background: #52c234;	}
+footer {
+  margin-top: auto;
+}
 .mgr-50 {    margin-right : 50px;	}
 .mgr-20 {    margin-right : 20px;	}
 .box1{
