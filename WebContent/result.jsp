@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="model.Suit" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -45,24 +44,17 @@
 			</c:forEach>
 		</div>
 	</div>
-		<div>
-			<h1>${result}</h1>
-		</div>
+	<div>
+		<h1>${result}</h1>
+	</div>
 		<div class="result">
 			<div>
 				<form action="./BlackJack" method="get">
 					<button type="submit">ANOTHER BATTLE</button>
 				</form>
 			</div>
-			<span class="mgr-50"></span>
-			<div>
-				<form action="index.jsp" method="POST">
-					<button type="submit">BACK TITLE</button>
-				</form>
-			</div>
-		</div>
-		<div class="resultback">
-			<jsp:include page="include/BJresult.jsp"/>
-		</div>
-	</body>
+	<jsp:include page="include/Back.jsp"/>
+	</div>
+	<jsp:include page="include/BJresult.jsp"/>
+</body>
 </html>

@@ -10,7 +10,7 @@
 <body >
 	<div class="hand">
 		<div>
-			<p class="example2">親の手札</p>
+			<p class="example2">DEALER HAND</p>
 			<h1>${computerhand}</h1>
 			<c:forEach var="computer" items="${computer}">
 				<img src="card/card_${computer.suit}_${computer.rank}.png" class="card"/>
@@ -18,7 +18,7 @@
 			<br>
 		</div>
 		<div>
-			<p class="example2">あなたの手札</p>
+			<p class="example2">PLAYER HAND</p>
 			<h1>${playerhand}</h1>
 			<c:forEach var="player" items="${player}">
 				<img src="card/card_${player.suit}_${player.rank}.png" class="card"/>
@@ -28,20 +28,14 @@
 	<div>
 		<h1>${result}</h1>
 	</div>
-	<div class="result">
-		<div>
-			<form action="./Poker" method="get">
-				<button type="submit">ANOTHER BATTLE</button>
-			</form>
-		</div>
-		<div>
-			<form action="index.jsp" method="POST">
-				<button type="submit">BACK TITLE</button>
-			</form>
-		</div>
+		<div class="result">
+			<div>
+				<form action="./Poker" method="get">
+					<button type="submit">ANOTHER BATTLE</button>
+				</form>
+			</div>
+		<jsp:include page="include/Back.jsp"/>
 	</div>
-	<div class="resultback">
-		<jsp:include page="include/PKresult.jsp"/>
-	</div>
+	<jsp:include page="include/PKresult.jsp"/>
 </body>
 </html>
