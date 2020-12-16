@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>ブラックジャック</title>
+	<title>Brack Jack</title>
 	<link rel="stylesheet" href="css/Style.css">
 </head>
 <body>

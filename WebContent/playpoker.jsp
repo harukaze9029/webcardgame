@@ -4,10 +4,10 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>ポーカー</title>
+	<title>Poker</title>
 	<link rel="stylesheet" href="css/Style.css">
 	<script src="css/jquery-3.5.1.min.js"></script>
-	<script type="text/javascript" src="css/from.js"></script>
+	<script type="text/javascript" src="css/form.js"></script>
 </head>
 <body>
 	<div class="hand">

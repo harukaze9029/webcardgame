@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>ブラックジャック</title>
+	<title>Brack Jack</title>
 	<link rel="stylesheet" href="css/Style.css">
 </head>
 <body>
@@ -62,15 +62,7 @@
 			</div>
 		</div>
 		<div class="resultback">
-			<div>
-				<h2>Record<span class="mgr-50"></span>
-				${win + lose + drow}battles
-				<c:if test="${win > 0}">${win}wins</c:if><c:if test="${result == 'win'}">(+1)</c:if>
-				<c:if test="${lose > 0}"> ${lose}losses</c:if><c:if test="${result == 'lose'}">(+1)</c:if>
-				<c:if test="${drow > 0}"> ${drow}drows</c:if><c:if test="${result == 'drow'}">(+1)</c:if>
-				</h2>
-			</div>
-			<div>Win rate  ${rate}  %</div>
+			<jsp:include page="include/BJresult.jsp"/>
 		</div>
 	</body>
 </html>
