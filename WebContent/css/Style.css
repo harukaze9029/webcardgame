@@ -9,7 +9,6 @@
 .mod_form form table td.taste label {	float: center;    width: 145px;	}
 .result {
 	justify-content: center;
-
 }
 .hand {
 	justify-content: space-around;
@@ -49,6 +48,7 @@ body,
 }
 .example2 {	padding: 0.5em 1em;	margin: 2em 0;	background: #52c234;	}
 footer {
+	background-color: #000;
   margin-top: auto;
 }
 .mgr-50 {    margin-right : 50px;	}
@@ -61,5 +61,8 @@ footer {
 }
 .resultback {
 	border: thick double #4CB32C;
-   background-color: rgba( 76, 179, 44, 0.55 );
+	background-color: rgba( 76, 179, 44, 0.55 );
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
 }
