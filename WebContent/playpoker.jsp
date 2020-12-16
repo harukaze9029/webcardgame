@@ -24,10 +24,12 @@
 					<tbody>
 						<tr>
 							<td class="taste">
+							<c:forEach begin="0" end="4" step="1" varStatus="i">
 								<label>
-									<input type="checkbox" name="checkbox" value="0" class="location_checkbox">
-									<img src="card/card_${player[0].suit}_${player[0].rank}.png" class="card"/>
+									<input type="checkbox" name="checkbox" value="${i.index} }" class="location_checkbox">
+									<img src="card/card_${player[i.index].suit}_${player[i.index].rank}.png" class="card"/>
 								</label>
+							</c:forEach>
 								<label>
 									<input type="checkbox" name="checkbox" value="1" class="location_checkbox">
 									<img src="card/card_${player[1].suit}_${player[1].rank}.png" class="card"/>
