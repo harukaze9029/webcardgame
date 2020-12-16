@@ -26,26 +26,10 @@
 							<td class="taste">
 							<c:forEach begin="0" end="4" step="1" varStatus="i">
 								<label>
-									<input type="checkbox" name="checkbox" value="${i.index} }" class="location_checkbox">
+									<input type="checkbox" name="checkbox" value="${i.index}" class="location_checkbox">
 									<img src="card/card_${player[i.index].suit}_${player[i.index].rank}.png" class="card"/>
 								</label>
 							</c:forEach>
-								<label>
-									<input type="checkbox" name="checkbox" value="1" class="location_checkbox">
-									<img src="card/card_${player[1].suit}_${player[1].rank}.png" class="card"/>
-								</label>
-								<label>
-									<input type="checkbox" name="checkbox" value="2" class="location_checkbox">
-									<img src="card/card_${player[2].suit}_${player[2].rank}.png" class="card"/>
-								</label>
-								<label>
-									<input type="checkbox" name="checkbox" value="3" class="location_checkbox">
-									<img src="card/card_${player[3].suit}_${player[3].rank}.png" class="card"/>
-								</label>
-								<label>
-									<input type="checkbox" name="checkbox" value="4" class="location_checkbox">
-									<img src="card/card_${player[4].suit}_${player[4].rank}.png" class="card"/>
-								</label>
 							</td>
 						</tr>
 					</tbody>
