@@ -9,6 +9,7 @@
 .mod_form form table td.taste label {	float: center;	width: 145px;	}
 .result {
 	justify-content: center;
+	display: flex;
 }
 .hand {
 	justify-content: space-evenly;
@@ -60,7 +61,7 @@ footer {	margin-top: auto;	}
 .resultback {
 	border: thick double #4CB32C;
 	background-color: rgba( 76, 179, 44, 0.55 );
-	width: 600px;
+	width: 400px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -70,4 +71,13 @@ footer {	margin-top: auto;	}
     font-weight: bold;
     border: solid 7px #FFF;
     border-radius: 10px;
+}
+@media screen and (max-width: 480px) {
+
+.trump {
+
+width: 100% ;
+
+}
+
 }

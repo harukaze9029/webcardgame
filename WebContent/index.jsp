@@ -6,11 +6,11 @@
 	<meta charset="UTF-8">
 	<title>Top</title>
 	<link rel="stylesheet" href="css/Style.css">
-	<meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 <body>
   <div id="wrapper">
-<main>
+	<main>
 	<div class="result">
 		<div>
 			<img src="card/BJ.jpg" class="trump">
@@ -30,7 +30,7 @@
 			<jsp:include page="include/PKresult.jsp"/>
 		</div>
 	</div>
-</main>
+	</main>
 <jsp:include page="include/footer.jsp"/>
 </div>
 </body>
