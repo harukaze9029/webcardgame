@@ -79,7 +79,7 @@ footer {	margin-top: auto;	}
 }
 .hand {
 	justify-content: space-evenly;
-	display: grid;	flex-direction: row;
+	display: table;	flex-direction: row;
 	align-items: flex-start;
 }
 .trump {
