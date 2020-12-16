@@ -74,7 +74,7 @@ footer {	margin-top: auto;	}
 }
 @media screen and (max-width: 480px) {
 .result {	justify-content: center;	display: block;	}
-.hand {	justify-content: space-evenly;	display: table;	flex-direction: row;	align-items: flex-start;	}
+.hand {	justify-content: space-evenly;	display: table;	flex-direction: row;	align-items: flex-start;	  margin: 0 auto;}
 .host{	width: 100% ;	margin-left: auto;
 	margin-right: auto;}
 .player{	width: 100% ;	margin-left: auto;
