@@ -2,9 +2,6 @@
 <c:if test="${win + lose + drow > 0}">
 <div class="resultback">
 <div>
-	<h2>Record</h2>
-</div>
-<div>
 	<H3>
 	<span class="mgr-20">${win + lose + drow}battles</span>
 	<c:if test="${win > 0}">${win}wins</c:if><c:if test="${result == 'win'}">(+1)</c:if>

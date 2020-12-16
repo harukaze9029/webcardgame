@@ -6,12 +6,12 @@
 	font-weight:bold;  color:#000;
 	vertical-align: top;
 }
-.mod_form form table td.taste label {	float: center;    width: 145px;	}
+.mod_form form table td.taste label {	float: center;	width: 145px;	}
 .result {
 	justify-content: center;
 }
 .hand {
-	justify-content: space-around;
+	justify-content: space-evenly;
 	display: flex;	flex-direction: row;
 	align-items: flex-start;
 }
@@ -22,6 +22,7 @@
 .location_checkbox + img {    border: 1px solid rgba( 0, 0, 0, 0 );	}
 .location_checkbox:checked + img {   border: 2px dashed red;  position: relative;    bottom: 20px;	}
 .card {	width: 136px;	height: 200px;	}
+.scard{	width: 105px;	height: 160px;	}
 .trump {	width: 400px;	height: 235px;	}
 button {	WIDTH: 200px; HEIGHT: 40px	}
 input.btn{	WIDTH: 200px; HEIGHT: 40px	}
@@ -35,7 +36,6 @@ body {
 	background-image: url(../card/back.jpg);
 	background-position: center center;
 	background-repeat: no-repeat;
-	background-attachment: fixed;
 	background-size: cover;
 	background-color: #52c234;
 	font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans';
@@ -46,15 +46,13 @@ body,
   flex-direction: column;
   min-height: 100vh;
 }
-.example2 {	padding: 0.5em 1em;	margin: 2em 0;	background: #52c234;	}
-footer {
-	background-color: #000;
-  margin-top: auto;
-}
+.example2 {	padding: 0.5em 1em;	background: #52c234;
+margin-block-start: 0.5em;
+    margin-block-end: 0.5em;	}
+footer {	margin-top: auto;	}
 .mgr-50 {    margin-right : 50px;	}
 .mgr-20 {    margin-right : 20px;	}
 .box1{
-  margin: 1em 0;
   padding: 0.2em;
   background-color: #c5e1a5;
   border: double 5px #66bb6a;
@@ -62,7 +60,14 @@ footer {
 .resultback {
 	border: thick double #4CB32C;
 	background-color: rgba( 76, 179, 44, 0.55 );
-	width: 700px;
+	width: 600px;
 	margin-left: auto;
 	margin-right: auto;
+}
+.handback {
+	padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid 7px #FFF;
+    border-radius: 10px;
 }

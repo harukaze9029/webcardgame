@@ -10,22 +10,26 @@
 </head>
 <body>
   <div id="wrapper">
-<main>
+	<main>
 	<div class="hand">
 		<div>
 			<p class="example2">DEALER HAND</p>
 			<h1>${computerhand}</h1>
+			<div class="handback">
 			<c:forEach var="computer" items="${computer}">
-				<img src="card/card_${computer.suit}_${computer.rank}.png" class="card"/>
+				<img src="card/card_${computer.suit}_${computer.rank}.png" class="scard"/>
 			</c:forEach>
+			</div>
 			<br>
 		</div>
 		<div>
 			<p class="example2">PLAYER HAND</p>
 			<h1>${playerhand}</h1>
+			<div class="handback">
 			<c:forEach var="player" items="${player}">
-				<img src="card/card_${player.suit}_${player.rank}.png" class="card"/>
+				<img src="card/card_${player.suit}_${player.rank}.png" class="scard"/>
 			</c:forEach>
+			</div>
 		</div>
 	</div>
 	<div>

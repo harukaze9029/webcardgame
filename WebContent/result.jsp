@@ -25,9 +25,11 @@
 					<h2 class="box1">HOST COUNT ${comcount}</h2>
 				</c:otherwise>
 			</c:choose>
+			<div class="handback">
 			<c:forEach var="computer" items="${computer}">
 				<img src="card/card_${computer.suit}_${computer.rank}.png" class="card"/>
 			</c:forEach>
+			</div>
 		</div>
 		<div>
 			<p class="example2">PLAYER HAND</p>
@@ -42,9 +44,11 @@
 					<h2 class="box1">YOU COUNT ${youcount}</h2>
 				</c:otherwise>
 			</c:choose>
+			<div class="handback">
 			<c:forEach var="player" items="${player}">
 				<img src="card/card_${player.suit}_${player.rank}.png" class="card"/>
 			</c:forEach>
+			</div>
 		</div>
 	</div>
 	<div>

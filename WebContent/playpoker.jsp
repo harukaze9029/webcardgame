@@ -16,9 +16,12 @@
 	<div class="hand">
 		<div>
 			<p class="example2">DEALER HAND</p>
+			<br>
+			<div class="handback">
 			<c:forEach var="i" begin="1" end="5" step="1">
-				<img src="card/card_back.png" class="card"/>
+				<img src="card/card_back.png" class="scard"/>
 			</c:forEach>
+			</div>
 		</div>
 		<div class="mod_form">
 			<p class="example2">PLAYER HAND</p>
@@ -27,12 +30,14 @@
 					<tbody>
 						<tr>
 							<td class="taste">
+							<div class="handback">
 							<c:forEach begin="0" end="4" step="1" varStatus="i">
 								<label>
 									<input type="checkbox" name="checkbox" value="${i.index}" class="location_checkbox">
-									<img src="card/card_${player[i.index].suit}_${player[i.index].rank}.png" class="card"/>
+									<img src="card/card_${player[i.index].suit}_${player[i.index].rank}.png" class="scard"/>
 								</label>
 							</c:forEach>
+							</div>
 							</td>
 						</tr>
 					</tbody>
