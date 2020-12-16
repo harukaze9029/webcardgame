@@ -77,6 +77,11 @@ footer {	margin-top: auto;	}
 	justify-content: center;
 	    display: block;
 }
+.hand {
+	justify-content: space-evenly;
+	display: grid;	flex-direction: row;
+	align-items: flex-start;
+}
 .trump {
 width: 100% ;
 }
