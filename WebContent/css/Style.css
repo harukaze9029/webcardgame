@@ -61,7 +61,6 @@ footer {	margin-top: auto;	}
 .resultback {
 	border: thick double #4CB32C;
 	background-color: rgba( 76, 179, 44, 0.55 );
-	width: 390px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -73,7 +72,6 @@ footer {	margin-top: auto;	}
     border-radius: 10px;
 }
 .Win{
-	font-size: 40px;
 	margin-block-start: 0.1em;
     margin-block-end: 0.1em;
     border-top:1px solid #CC3333;
@@ -86,12 +84,10 @@ footer {	margin-top: auto;	}
 	-moz-border-radius: 7px; /* FireFox */
 	-webkit-border-radius: 7px;/* Chrome & Safari */
 	font-size:140%;
-		width: 390px;
 	margin-left: auto;
 	margin-right: auto;
 }
 .Lose{
-	font-size: 40px;
 	margin-block-start: 0.1em;
     margin-block-end: 0.1em;
     border-top:1px solid #888;
@@ -104,12 +100,10 @@ footer {	margin-top: auto;	}
 	-moz-border-radius: 7px; /* FireFox */
 	-webkit-border-radius: 7px;/* Chrome & Safari */
 	font-size:140%;
-		width: 390px;
 	margin-left: auto;
 	margin-right: auto;
 }
 .Draw{
-	font-size: 40px;
 	margin-block-start: 0.1em;
     margin-block-end: 0.1em;
     border-top:1px solid #888;
@@ -122,15 +116,22 @@ footer {	margin-top: auto;	}
 	-moz-border-radius: 7px; /* FireFox */
 	-webkit-border-radius: 7px;/* Chrome & Safari */
 	font-size:140%;
-		width: 390px;
 	margin-left: auto;
 	margin-right: auto;
 }
 @media screen and (max-width: 480px) {
+
 .result {	justify-content: center;	display: block;	}
 .hand {	justify-content: space-evenly;	display: table;	flex-direction: row;	align-items: flex-start;	  margin: 0 auto;}
 .host{	width: 100% ;	margin-left: auto;	margin-right: auto;}
 .player{	width: 100% ;	margin-left: auto;	margin-right: auto;}
 .trump {	width: 100% ;	}
+
+}
+@media screen and (min-width: 480px) {
+
+.Win,.Lose,.Draw,.resultback{
+	width: 390px;
+}
 
 }
