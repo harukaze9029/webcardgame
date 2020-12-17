@@ -133,5 +133,80 @@ footer {	margin-top: auto;	}
 .Win,.Lose,.Draw,.resultback{
 	width: 390px;
 }
+.button {
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.button:hover {
+  background-color: #71e52e;
+  box-shadow: 0px 15px 20px rgba(113, 229, 46, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+.btn02 {
+  position: relative;
+  display: inline-block;
+  background:  #71e52e;
+  border: 2px solid  #71e52e;
+  border-radius: 4px;
+  color:  #71e52e;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  -webkit-transition: .8s;
+  transition: .8s;
+      text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+}
+
+.btn02 span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn02::before,
+.btn02::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 51%;
+  height: 100%;
+  background-color: #ffffff;
+  -webkit-transition: .2s;
+  transition: .2s;
+
+}
+
+.btn02::before {
+  left: 0;
+}
+
+.btn02::after {
+  right: 0;
+}
+
+.btn02:hover::before,
+.btn02:hover::after {
+  width: 0;
+  background: #ffffff;
+}
+
+.btn02:hover {
+  color: #ffffff;
+}
 
 }

@@ -38,7 +38,7 @@
 		<div class="result">
 			<div>
 				<form action="./Poker" method="get">
-					<button type="submit">ANOTHER BATTLE</button>
+					<button  class="btn02" type="submit">ANOTHER BATTLE</button>
 				</form>
 			</div>
 		<jsp:include page="include/Back.jsp"/>
