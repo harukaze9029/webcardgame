@@ -90,7 +90,7 @@ public class Decision {
 	public String decisionbattles(){
 		String winlose;
 		if(getPlayerCountTotal() == getHostCountTotal()) {
-			winlose = "Drow";
+			winlose = "Draw";
 		}else if(getPlayerCountTotal() > getHostCountTotal()) {
 			winlose = "Win";
 		}else if(getPlayerCountTotal() < getHostCountTotal()) {

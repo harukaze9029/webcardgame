@@ -58,15 +58,15 @@ public class BlackJackResult extends HttpServlet {
 			}else if(battle.equals("Lose")) {
 				bl.lose(b);
 			}else {
-				bl.drow(b);
+				bl.draw(b);
 			}
 			int win = (int)b.getWin();
 			int lose = (int)b.getLose();
-			int drow = (int)b.getDrow();
+			int draw = (int)b.getDraw();
 			int x = (int) Math.round((b.getWin() /(b.getWin()+b.getLose()))*100);
 			session.setAttribute("win", win);
 			session.setAttribute("lose", lose);
-			session.setAttribute("drow", drow);
+			session.setAttribute("draw", draw);
 			session.setAttribute("rate", x);
 			session.setAttribute("battle", b);
 			session.setAttribute("result", d.decisionbattles());

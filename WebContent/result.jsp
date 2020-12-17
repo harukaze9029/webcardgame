@@ -52,7 +52,7 @@
 		</div>
 	</div>
 	<div>
-		<h1>${result}</h1>
+		<p class="${result}">${result}</p>
 	</div>
 	<div class="result">
 		<div>
