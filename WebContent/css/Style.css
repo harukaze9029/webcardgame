@@ -132,7 +132,7 @@ footer {	margin-top: auto;	}
 .host{	width: 100% ;	margin-left: auto;	margin-right: auto;}
 .player{	width: 100% ;	margin-left: auto;	margin-right: auto;}
 .trump {	width: 100% ;	}
-
+.btn03 {	WIDTH: 200px; HEIGHT: 40px	}
 }
 @media screen and (min-width: 480px) {
 
