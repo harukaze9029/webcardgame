@@ -78,7 +78,7 @@ public class BlackJackResult extends HttpServlet {
 			session.removeAttribute("deck");
 			session.removeAttribute("index");
 
-			RequestDispatcher dispatcher = request.getRequestDispatcher("result.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("resultbj.jsp");
 			dispatcher.forward(request, response);
 		} catch (NumberFormatException e) {
 			e.printStackTrace();

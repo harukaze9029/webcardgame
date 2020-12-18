@@ -1,5 +1,11 @@
 package model;
 
+/**
+ *
+ * @author k_itou
+ *
+ */
+
 public class Battle {
 	double win = 0.0;
 	double lose = 0.0;
