@@ -17,21 +17,24 @@ import model.Player;
 
 @WebServlet("/Poker")
 public class Poker extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
+
 	protected void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException {
 		Deck deck = new Deck();
 		HttpSession session = request.getSession();
 		session.setAttribute("deck",deck.Deckmake());
-		Player player = new Player(deck.draw(5));
-		Player computer = new Player(deck.draw(5));
 
-		Card[] strArray1 = player.show_hand().toArray(new Card[0]);
-		Card[] strArray2 = computer.show_hand().toArray(new Card[0]);
+		Player player = new Player(deck.draw(5));
+		Player dealer = new Player(deck.draw(5));
+
+		List<Card> playerhand = player.show_hand();
+		List<Card> dealerhand = dealer.show_hand();
 
 		int index = 9;
 		session.setAttribute("index", String.valueOf(index));
-		session.setAttribute("player",strArray1);
-		session.setAttribute("computer",strArray2);
+		session.setAttribute("player",playerhand);
+		session.setAttribute("dealer",dealerhand);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("poker.jsp");
 		dispatcher.forward(request, response);
@@ -44,9 +47,7 @@ public class Poker extends HttpServlet {
 
 		int index = Integer.parseInt((String) session.getAttribute("index"));
 		List<Card> deck = (List<Card>) session.getAttribute("deck");
-		Card[] a = (Card[]) session.getAttribute("player");
-
-		Player player = new Player(a);
+		List<Card> playerhand = (List<Card>) session.getAttribute("player");
 
 		response.setContentType("text/html; charset=Shift_JIS");
 		String[] removeCardsString = request.getParameterValues("checkbox");
@@ -57,16 +58,14 @@ public class Poker extends HttpServlet {
 			removeCards[i] = Integer.parseInt(removeCardsString[i]);
 		}
 
-		for(int i = 0;i < removeCards.length ; i++) {
-			player.remove(removeCards[i] - i);
+		for(int i = 0; i < removeCards.length; i++) {
+			playerhand.remove(removeCards[i] - i);
+			playerhand.add(deck.get(++index));
 		}
 
-		for(int i = 0;i < removeCards.length ; i++) {
-			player.add(deck.get(++index));
-		}
-
-		Card[] strArray1 = player.show_hand().toArray(new Card[0]);
-		session.setAttribute("player",strArray1);
+		Player player = new Player(playerhand);
+		List<Card> sortplayerhand = player.show_hand();
+		session.setAttribute("player",sortplayerhand);
 
 		response.sendRedirect("PokerResult");
 	}

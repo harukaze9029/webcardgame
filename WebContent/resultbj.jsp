@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,45 +10,37 @@
 </head>
 <body>
   <div id="wrapper">
-<main>
+	<main>
 	<div class="hand">
 		<div>
 			<p class="example2">DEALER HAND</p>
 			<c:choose>
-				<c:when test="${comcount == -1}">
-					<h2 class="box1">HOST BURST</h2>
+				<c:when test="${dealercount == -1}">
+					<h2 class="box1" id="burst">BURST</h2>
 				</c:when>
-				<c:when test="${comcount == 21}">
-					<h1 class="box1">BLACK JACK!!</h1>
+				<c:when test="${dealercount == 21}">
+					<h1 class="box1" id="blackjack">BLACK JACK!!</h1>
 				</c:when>
 				<c:otherwise>
-					<h2 class="box1">HOST COUNT ${comcount}</h2>
+					<h2 class="box1">COUNT ${dealercount}</h2>
 				</c:otherwise>
 			</c:choose>
-			<div class="handback">
-			<c:forEach var="computer" items="${computer}">
-				<img src="card/card_${computer.suit}_${computer.rank}.png" class="card"/>
-			</c:forEach>
-			</div>
+			<jsp:include page="include/dealerhand.jsp"/>
 		</div>
 		<div>
 			<p class="example2">PLAYER HAND</p>
 			<c:choose>
-				<c:when test="${youcount == -1}">
-					<h2 class="box1">YOU BURST</h2>
+				<c:when test="${playercount == -1}">
+					<h2 class="box1" id="burst">BURST</h2>
 				</c:when>
-				<c:when test="${youcount == 21}">
-					<h1 class="box1">BLACK JACK!!</h1>
+				<c:when test="${playercount == 21}">
+					<h1 class="box1" id="blackjack">BLACK JACK!!</h1>
 				</c:when>
 				<c:otherwise>
-					<h2 class="box1">YOU COUNT ${youcount}</h2>
+					<h2 class="box1">COUNT ${playercount}</h2>
 				</c:otherwise>
 			</c:choose>
-			<div class="handback">
-			<c:forEach var="player" items="${player}">
-				<img src="card/card_${player.suit}_${player.rank}.png" class="card"/>
-			</c:forEach>
-			</div>
+			<jsp:include page="include/playerhand.jsp"/>
 		</div>
 	</div>
 	<div>
@@ -60,11 +52,11 @@
 				<button  class="btn02" type="submit">ANOTHER BATTLE</button>
 			</form>
 		</div>
-	<jsp:include page="include/Back.jsp"/>
+		<jsp:include page="include/Back.jsp"/>
 	</div>
 	<jsp:include page="include/BJresult.jsp"/>
 	</main>
 	<jsp:include page="include/footer.jsp"/>
-	</div>
+</div>
 </body>
 </html>

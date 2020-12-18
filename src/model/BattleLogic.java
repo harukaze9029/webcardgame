@@ -2,33 +2,33 @@ package model;
 
 public class BattleLogic {
 
-	public void win(Battle battle) {
-		double count = battle.getWin();
-		battle.setWin(count + 1.0);
+	public void winpo(Count battle) {
+		double count = battle.getWinpo();
+		battle.setWinpo(count + 1);
 	}
 
-	public void lose(Battle battle) {
-		double count = battle.getLose();
-		battle.setLose(count + 1);
+	public void losepo(Count battle) {
+		double count = battle.getLosepo();
+		battle.setLosepo(count + 1);
 	}
 
-	public void draw(Battle battle) {
-		double count = battle.getDraw();
-		battle.setDraw(count + 1);
+	public void drawpo(Count battle) {
+		double count = battle.getDrawpo();
+		battle.setDrawpo(count + 1);
 	}
-	public void win(Count battle) {
-		double count = battle.getWin();
-		battle.setWin(count + 1);
-	}
-
-	public void lose(Count battle) {
-		double count = battle.getLose();
-		battle.setLose(count + 1);
+	public void winbj(Count battle) {
+		double count = battle.getWinbj();
+		battle.setWinbj(count + 1);
 	}
 
-	public void draw(Count battle) {
-		double count = battle.getDraw();
-		battle.setDraw(count + 1);
+	public void losebj(Count battle) {
+		double count = battle.getLosebj();
+		battle.setLosebj(count + 1);
+	}
+
+	public void drawbj(Count battle) {
+		double count = battle.getDrawbj();
+		battle.setDrawbj(count + 1);
 	}
 
 }

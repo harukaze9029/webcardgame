@@ -18,30 +18,34 @@ import model.Player;
 
 @WebServlet("/BlackJack")
 public class BlackJack extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
+
 	protected void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException {
 		Deck deck = new Deck();
 		HttpSession session = request.getSession();
 		session.setAttribute("deck",deck.Deckmake());
 
 		Player player = new Player(deck.draw(2));
-		Player computer = new Player(deck.draw(2));
+		Player dealer = new Player(deck.draw(2));
 
-		int index = 4;
+		List<Card> playerhand = player.tolist();
+		List<Card> dealerhand = dealer.tolist();
+
+		int index = 3;
 		session.setAttribute("index", String.valueOf(index));
+		session.setAttribute("player",playerhand);
+		session.setAttribute("dealer",dealerhand);
 
-		Card[] strArray1 = player.tolist().toArray(new Card[0]);
-		Card[] strArray2 = computer.tolist().toArray(new Card[0]);
-		session.setAttribute("player",strArray1);
-		session.setAttribute("computer",strArray2);
-		Decision d = new Decision();
-		int youcount = d.DecisionPlayer(player.tolist());
-		if(youcount == 21) {
+		Decision decision = new Decision();
+		int playercount = decision.DecisionPlayer(playerhand);
+		if(playercount == 21) {
 			response.sendRedirect("BlackJackResult");
 			return;
 		}
-		session.setAttribute("youcount", youcount);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("brackjack.jsp");
+		session.setAttribute("playercount", playercount);
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("blackjack.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -49,7 +53,7 @@ public class BlackJack extends HttpServlet {
 	protected void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
-		Card[] a = (Card[]) session.getAttribute("player");
+		List<Card> a = (List<Card>) session.getAttribute("player");
 		Player player = new Player(a);
 
 		int index = Integer.parseInt((String) session.getAttribute("index"));
@@ -57,23 +61,19 @@ public class BlackJack extends HttpServlet {
 
 		player.add(deck.get(++index));
 
-		Card[] strArray1 = player.tolist().toArray(new Card[0]);
+		List<Card> playerhand = player.tolist();
 
-		session.setAttribute("player",strArray1);
+		session.setAttribute("player", playerhand);
 		session.setAttribute("index", String.valueOf(index));
 
-		Decision d = new Decision();
-		int youcount = d.DecisionPlayer(player.tolist());
-		if(youcount == -1) {
+		Decision decision = new Decision();
+		int playercount = decision.DecisionPlayer(playerhand);
+		if(playercount == -1 || playercount == 21) {
 			response.sendRedirect("BlackJackResult");
 			return;
 		}
-		if(youcount == 21) {
-			response.sendRedirect("BlackJackResult");
-			return;
-		}
-		session.setAttribute("youcount", youcount);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("brackjack.jsp");
+		session.setAttribute("playercount", playercount);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("blackjack.jsp");
 		dispatcher.forward(request, response);
 	}
 }

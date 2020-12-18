@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,19 +21,20 @@ import model.Player;
 public class PokerResult extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	@SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			request.setCharacterEncoding("UTF-8");
 			HttpSession session = request.getSession();
-			Card[] a = (Card[]) session.getAttribute("player");
-			Card[] b = (Card[]) session.getAttribute("computer");
+			List<Card> a = (List<Card>) session.getAttribute("player");
+			List<Card> b = (List<Card>) session.getAttribute("dealer");
 			Player player = new Player(a);
-			Player computer = new Player(b);
+			Player dealer = new Player(b);
 
 			session.setAttribute("playerhand",player.PokerHand(player));
-			session.setAttribute("computerhand",computer.PokerHand(computer));
+			session.setAttribute("dealerhand",dealer.PokerHand(dealer));
 
-			int result = computer.compareTo(player);
+			int result = dealer.compareTo(player);
 			Count count = (Count)session.getAttribute("count");
 			if(count == null) {
 				count = new Count();
@@ -41,22 +43,22 @@ public class PokerResult extends HttpServlet {
 			BattleLogic bl = new BattleLogic();
 			if(result == 0) {
 				session.setAttribute("result","Draw");
-				bl.draw(count);
+				bl.drawpo(count);
 			}else if(result < 0) {
 				session.setAttribute("result","Lose");
-				bl.lose(count);
+				bl.losepo(count);
 			}else {
 				session.setAttribute("result","Win");
-				bl.win(count);
+				bl.winpo(count);
 			}
-			int win = (int)count.getWin();
-			int lose = (int)count.getLose();
-			int draw = (int)count.getDraw();
-			int x = (int) Math.round((count.getWin() /(count.getWin()+count.getLose()))*100);
-			session.setAttribute("wincn", win);
-			session.setAttribute("losecn", lose);
-			session.setAttribute("drawcn", draw);
-			session.setAttribute("ratep", x);
+			int winpo = (int)count.getWinpo();
+			int losepo = (int)count.getLosepo();
+			int drawpo = (int)count.getDrawpo();
+			int winratepo = (int) Math.round((count.getWinpo() /(count.getWinpo()+count.getLosepo()))*100);
+			session.setAttribute("winpo", winpo);
+			session.setAttribute("losepo", losepo);
+			session.setAttribute("drawpo", drawpo);
+			session.setAttribute("ratepo", winratepo);
 			session.setAttribute("count", count);
 			session.removeAttribute("deck");
 

@@ -12,7 +12,7 @@
 </head>
 <body>
   <div id="wrapper">
-<main>
+	<main>
 	<div class="hand">
 		<div>
 			<p class="example2">DEALER HAND</p>
@@ -42,16 +42,15 @@
 						</tr>
 					</tbody>
 				</table>
-				<input type="submit" value="CHANGE" id="btn1" class="btn">
+				<input type="submit" value="CHANGE" id="btn1" class="btn03">
 			</form>
 			<br>
 			<form action="./PokerResult" method="get">
-				<input type="submit" value="STAND" class="btn">
+				<input type="submit" value="STAND" class="btn03">
 			</form>
 		</div>
-
 	</div>
-</main>
+	</main>
 <jsp:include page="include/footer.jsp"/>
 </div>
 </body>
