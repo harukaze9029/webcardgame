@@ -15,13 +15,21 @@
 		<div>
 			<p class="example2">DEALER HAND</p>
 			<h1>${dealerhand}</h1>
-			<jsp:include page="include/dealerhand.jsp"/>
+			<div class="handback">
+				<c:forEach var="dealer" items="${dealer}">
+					<img src="card/card_${dealer.suit}_${dealer.rank}.png" class="scard"/>
+				</c:forEach>
+			</div>
 			<br>
 		</div>
 		<div>
 			<p class="example2">PLAYER HAND</p>
 			<h1>${playerhand}</h1>
-			<jsp:include page="include/playerhand.jsp"/>
+			<div class="handback">
+				<c:forEach var="player" items="${player}">
+					<img src="card/card_${player.suit}_${player.rank}.png" class="scard"/>
+				</c:forEach>
+			</div>
 		</div>
 	</div>
 	<div>

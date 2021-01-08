@@ -13,7 +13,7 @@
 	<main>
 	<div class="result">
 		<div>
-			<img src="card/BJ.jpg" class="trump">
+			<img src="img/BJ.jpg" class="trump">
 			<form action="./BlackJack" method="get">
 				<button type="submit">BRACK JACK</button>
 			</form>
@@ -22,7 +22,7 @@
 		</div>
 		<span class="mgr-50"></span>
 		<div>
-			<img src="card/royal.jpg" class="trump">
+			<img src="img/royal.jpg" class="trump">
 			<form action="./Poker" method="get">
 				<button type="submit">POKER</button>
 			</form>
