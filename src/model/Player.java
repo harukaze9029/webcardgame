@@ -153,6 +153,42 @@ public class Player implements Comparable<Player>{
 		return hands;
 	}
 
+	public List<Card> milli_hand() {
+		List<Card> handsSort = hands.stream().sorted(comparing(Card::getSuit)).sorted(comparing(Card::getRank)).collect(toList());
+		int j = handsSort.size();
+		int count = 0;
+		for(int i = 0; i < j ; i++) {
+			if(handsSort.get(i).getRank() == 1 || handsSort.get(i).getRank() == 2) {
+				handsSort.add(handsSort.get(i));
+				count++;
+			}
+		}
+		List<Integer> in = handsSort.stream().map(Card::getRank).collect(toList());
+		int joker1 = in.indexOf(14);
+		int joker2 = in.indexOf(15);
+
+		if(joker1 != -1) {
+			handsSort.remove(joker1);
+			handsSort.add(new Card(Suit.spade,14));
+		}
+
+		if(joker2 != -1) {
+			if(joker1 != -1) {
+				handsSort.remove(joker2 - 1);
+				handsSort.add(new Card(Suit.spade,15));
+			}else {
+			handsSort.remove(joker2);
+			handsSort.add(new Card(Suit.spade,15));
+			}
+		}
+
+		for(int i = 0; i < count ; i++) {
+			handsSort.remove(0);
+		}
+		hands = handsSort;
+		return hands;
+	}
+
 	public void add(Card card) {
 		hands.add(card);
 	}

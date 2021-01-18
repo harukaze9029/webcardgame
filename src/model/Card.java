@@ -5,6 +5,7 @@ import java.util.Objects;
 public class Card {
 	private Suit suit;
 	private int rank;
+	private String joker;
 
 	public Card(Suit suit, int rank) {
 		this.suit = suit;
@@ -17,6 +18,10 @@ public class Card {
 
 	public int getRank() {
 		return rank;
+	}
+
+	public String getJoker() {
+		return joker;
 	}
 
 	@Override

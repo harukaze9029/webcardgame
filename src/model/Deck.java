@@ -25,7 +25,18 @@ public class Deck {
 	public Card draw() {
 		return cardList.get(drawIndex++);
 	}
-	
+
+	public void remove(int i) {
+		cardList.remove(i);
+	}
+
+	public void addJocker(int j) {
+		for(int i = 1 ; i <= j ; i++) {
+		cardList.add(new Card(Suit.spade,13 + i));
+		}
+		Collections.shuffle(cardList);
+	}
+
 	public Card[] draw(int count) {
 		Card[] cards = new Card[count];
 		for(int i = 0; i < count; i++) {

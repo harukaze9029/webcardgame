@@ -30,6 +30,12 @@
 			<jsp:include page="include/PKresult.jsp"/>
 		</div>
 	</div>
+	<div>
+	<img src="img/millionaire.jpg" class="trump">
+		<form action="./Millionaire" method="get">
+			<button type="submit">大富豪</button>
+		</form>
+	</div>
 	</main>
 	<jsp:include page="include/footer.jsp"/>
 </div>

@@ -24,10 +24,16 @@
 .location_checkbox:checked + img {   border: 2px dashed red;  position: relative;    bottom: 10px;	}
 .card {	width: 136px;	height: 200px;	}
 .scard{	width: 90px;	height: 140px;	}
+.million{	width: 75px;	height: 120px;	}
 .trump {	width: 400px;	height: 235px;	}
 button {	WIDTH: 200px; HEIGHT: 40px	}
 input.btn{	WIDTH: 200px; HEIGHT: 40px	}
 div {	text-align:center;	}
+label{
+display:block;
+float:left;
+width:76px;
+}
 body {
 	color: #fff;
 	text-shadow: 1px 1px 0 #000,
@@ -46,6 +52,52 @@ body,
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+      margin: 0px;
+}
+.container {
+  font-family: "Yu Gothic", YuGothic, Verdana, 'Hiragino Kaku Gothic ProN','Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, sans-serif;
+  text-align: center;
+  padding-top: 40px;
+}
+.btn-open {
+  display: inline-block;
+  width: 180px;
+  height:50px;
+  text-align: center;
+  background-color: #9ec34b;
+  font-size: 16px;
+  line-height: 52px;
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #9ec34b;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.btn-open:after{
+  width: 100%;
+  height: 0;
+  content:"";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background : #FFF;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  transition: .2s;
+  z-index: -1;
+}
+.btn-open:hover{
+  color: #9ec34b;
+}
+.btn-open:hover:after{
+  height: 240%;
+  opacity: 1;
+}
+.btn-open:active:after{
+  height: 340%;
+  opacity: 1;
 }
 #blackjack{
 	color:#000;
@@ -77,6 +129,52 @@ footer {	margin-top: auto;	}
     border: solid 7px #FFF;
     border-radius: 10px;
 }
+.handback1 {
+	display: inline-flex;
+	justify-content:center;
+	padding: 0.5em 1em;
+    font-weight: bold;
+    border: solid 7px #FFF;
+    border-radius: 10px;
+}
+.handback2 {
+	display: inline-flex;
+	justify-content:center;
+	padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid 7px #FFF;
+    border-radius: 10px;
+}
+.handback3 {
+	display: inline-flex;
+	justify-content:center;
+	padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid 7px #FFF;
+    border-radius: 10px;
+}
+.handback4 {
+	display: inline-flex;
+	justify-content:center;
+	padding: 0.5em 1em;
+    font-weight: bold;
+    border: solid 7px #FFF;
+    border-radius: 10px;
+}
+.field{
+	padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid 7px #FFF;
+    border-radius: 10px;
+}
+.and3 {
+display: flex;
+justify-content:space-between;
+}
+
 .Win{
 	margin-block-start: 0.1em;
     margin-block-end: 0.1em;
