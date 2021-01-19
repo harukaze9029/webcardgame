@@ -44,7 +44,12 @@ public class Millionaire extends HttpServlet {
 		session.setAttribute("com2",com2hand);
 		session.setAttribute("com3",com3hand);
 		session.removeAttribute("gabage");
+		session.removeAttribute("pass");
 		int count = 0;
+		String pass = "0";
+		int playernum = 4;
+		session.setAttribute("playernum", playernum);
+		session.setAttribute("pass", pass);
 		session.setAttribute("count",count);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("millionaire.jsp");

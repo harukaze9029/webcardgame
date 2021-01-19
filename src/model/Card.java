@@ -20,6 +20,10 @@ public class Card {
 		return rank;
 	}
 
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+
 	public String getJoker() {
 		return joker;
 	}

@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
+/*
 int order = (int) session.getAttribute("order");
 if(order == 2 || order == 3 || order == 4){
 	response.sendRedirect("./MillionairePlay");
 }
+*/
 %>
 <!DOCTYPE html>
 <html>
@@ -19,49 +21,70 @@ if(order == 2 || order == 3 || order == 4){
 <body>
 <div class="mill">
 <main>
-<div>
-	<p>${count}人目</p>
+<div class="and3">
+	<div>
+		<p class="conut">${count}人目</p><br>
+		<p>${pass}人がパスしました。</p>
+	</div>
 	<div class="handback1">
+	<c:if test="${com1.size() != 0}">
 		<img src="card/card_back.png" class="scard"/>
-		<p>手札：${com1.size()}枚
-		<c:if test="${order == 3}">com1さんの番</c:if></p>
+		</c:if>
+		<p>手札：${com1.size()}枚</p>
+	</div>
+	<div>
+		<form action="./MillionairePlay" method="get">
+			<input type="submit" value="Next" class="btn03">
+		</form><br>
+		<p>
+		<c:if test="${order == 3}">com1さんの番</c:if>
+		<c:if test="${order == 2}">com2さんの番</c:if>
+		<c:if test="${order == 4}">com3さんの番</c:if>
+		<c:if test="${order == 1}">あなたの番</c:if>
+		</p>
+		<br><br>
+		<p>
+		<c:if test="${playernum < 4}">1位：${ranking.get(0)}<br></c:if>
+		<c:if test="${playernum < 3}">2位：${ranking.get(1)}<br></c:if>
+		</p>
 	</div>
 </div>
 <div class="and3">
-<div class="handback2">
-	<img src="card/card_back.png" class="scard"/>
-	<p>手札：${com2.size()}枚
-	<c:if test="${order == 2}">com2さんの番</c:if></p>
-</div>
-<div class="field">
-	<c:if test="${gabage.get(0).getRank() >= 0}">
+	<div class="handback2">
+	<c:if test="${com2.size() != 0}">
+		<img src="card/card_back.png" class="scard"/>
+		</c:if>
+		<p>手札：${com2.size()}枚</p>
+	</div>
+	<div class="field">
+		<c:if test="${gabage != null}">
 		<c:forEach var="gabage" items="${gabage}">
 			<img src="card/card_${gabage.suit}_${gabage.rank}.png" class="million"/>
 		</c:forEach>
-	</c:if>
-	<c:if test="${gabage == null && order != 5}">
+		</c:if>
+		<c:if test="${gabage == null && order != 5}">
 			<img src="card/card_back.png" class="million"/>
-	</c:if>
-<c:if test="${order == 5}">
-	<div class="container">
-		<form action="./MillionairePlay" method="get">
-			<button class="btn-open">GAME START</button>
-		</form>
+		</c:if>
+		<c:if test="${order == 5}">
+			<div class="container">
+				<form action="./MillionairePlay" method="get">
+					<button class="btn-open">GAME START</button>
+				</form>
+			</div>
+		</c:if>
 	</div>
-</c:if>
+	<div class="handback3">
+		<p>手札：${com3.size()}枚</p>
+		<c:if test="${com3.size() != 0}">
+		<img src="card/card_back.png" class="scard"/>
+		</c:if>
+	</div>
+</div>
 
-</div>
-<div class="handback3">
-<p>手札：${com3.size()}枚
-<c:if test="${order == 4}">com3さんの番</c:if></p>
-	<img src="card/card_back.png" class="scard"/>
-</div>
-</div>
 <div class="handback4">
-<p>手札：${player.size()}枚<br>
-<c:if test="${order == 1}">あなたの番</c:if></p>
+<p>手札：${player.size()}枚</p>
 	<c:choose>
-		<c:when test="${order == 1}">
+		<c:when test="${order == 1 && player.size() != 0}">
 			<form action="./MillionairePlay" method="post">
 				<table>
 					<tbody>
@@ -80,9 +103,6 @@ if(order == 2 || order == 3 || order == 4){
 					</tbody>
 				</table>
 				<input type="submit" value="Play a card" id="btn1" class="btn03">
-			</form>
-			<form action="./MillionairePlay" method="get">
-				<input type="submit" value="Pass" id="btn1" class="btn03">
 			</form>
 		</c:when>
 		<c:otherwise>
