@@ -45,6 +45,7 @@ public class Millionaire extends HttpServlet {
 		session.setAttribute("com3",com3hand);
 		session.removeAttribute("gabage");
 		session.removeAttribute("pass");
+		session.removeAttribute("ranking");
 		int count = 0;
 		String pass = "0";
 		int playernum = 4;

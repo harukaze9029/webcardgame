@@ -19,74 +19,81 @@ if(order == 2 || order == 3 || order == 4){
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 <body>
-<div class="mill">
-<main>
-<div class="and3">
-	<div>
-		<p class="conut">${count}人目</p><br>
-		<p>${pass}人がパスしました。</p>
-	</div>
-	<div class="handback1">
-	<c:if test="${com1.size() != 0}">
-		<img src="card/card_back.png" class="scard"/>
-		</c:if>
-		<p>手札：${com1.size()}枚</p>
-	</div>
-	<div>
-		<form action="./MillionairePlay" method="get">
-			<input type="submit" value="Next" class="btn03">
-		</form><br>
-		<p>
-		<c:if test="${order == 3}">com1さんの番</c:if>
-		<c:if test="${order == 2}">com2さんの番</c:if>
-		<c:if test="${order == 4}">com3さんの番</c:if>
-		<c:if test="${order == 1}">あなたの番</c:if>
-		</p>
-		<br><br>
-		<p>
-		<c:if test="${playernum < 4}">1位：${ranking.get(0)}<br></c:if>
-		<c:if test="${playernum < 3}">2位：${ranking.get(1)}<br></c:if>
-		</p>
-	</div>
-</div>
-<div class="and3">
-	<div class="handback2">
-	<c:if test="${com2.size() != 0}">
-		<img src="card/card_back.png" class="scard"/>
-		</c:if>
-		<p>手札：${com2.size()}枚</p>
-	</div>
-	<div class="field">
-		<c:if test="${gabage != null}">
-		<c:forEach var="gabage" items="${gabage}">
-			<img src="card/card_${gabage.suit}_${gabage.rank}.png" class="million"/>
-		</c:forEach>
-		</c:if>
-		<c:if test="${gabage == null && order != 5}">
-			<img src="card/card_back.png" class="million"/>
-		</c:if>
-		<c:if test="${order == 5}">
-			<div class="container">
-				<form action="./MillionairePlay" method="get">
-					<button class="btn-open">GAME START</button>
-				</form>
+	<div id="wrapper">
+	<main>
+		<div class="and3">
+			<div class="blackboard-box">
+				<p class="conut">${count}人目</p><br>
+				<p>${pass}人がパスしました。</p>
 			</div>
-		</c:if>
+			<div class="handback1">
+				<c:if test="${com2.size() != 0}">
+					<img src="card/card_back.png" class="scard"/>
+				</c:if>
+				<p>com2<br>手札：${com2.size()}枚<br>
+				<c:if test="${ranking.get(0) == 'com2'}"><img src="img/first.png" class="rank"/></c:if>
+				<c:if test="${ranking.get(1) == 'com2'}"><img src="img/second.png" class="rank"/></c:if></p>
+			</div>
+		<div class="blackboard-box">
+			<form action="./MillionairePlay" method="get">
+				<input type="submit" value="Next" class="btn03">
+			</form><br>
+			<p>
+				<c:if test="${order == 2}">com1さんの番</c:if>
+				<c:if test="${order == 3}">com2さんの番</c:if>
+				<c:if test="${order == 4}">com3さんの番</c:if>
+				<c:if test="${order == 1}">あなたの番</c:if>
+				<br>
+				<c:if test="${flush8 == 1}">8切り</c:if>
+				<c:if test="${GK == 1}">スぺ3返し</c:if>
+			</p>
+			<br>
+				<c:if test="${playernum < 4}"><p>1位：${ranking.get(0)}</p></c:if>
+				<c:if test="${playernum < 3}"><br><p>2位：${ranking.get(1)}</p></c:if>
+		</div>
 	</div>
-	<div class="handback3">
-		<p>手札：${com3.size()}枚</p>
-		<c:if test="${com3.size() != 0}">
-		<img src="card/card_back.png" class="scard"/>
-		</c:if>
+	<div class="and3">
+		<div class="handback2">
+			<c:if test="${com1.size() != 0}">
+				<img src="card/card_back.png" class="scard"/>
+			</c:if>
+			<p>com1<br>手札：${com1.size()}枚<br>
+			<c:if test="${ranking.get(0) == 'com1'}"><img src="img/first.png" class="rank"/></c:if>
+			<c:if test="${ranking.get(1) == 'com1'}"><img src="img/second.png" class="rank"/></c:if></p>
+		</div>
+		<div class="field">
+			<c:if test="${gabage != null}">
+				<c:forEach var="gabage" items="${gabage}">
+					<img src="card/card_${gabage.suit}_${gabage.rank}.png" class="million"/>
+				</c:forEach>
+			</c:if>
+			<c:if test="${gabage == null && order != 5}">
+				<img src="card/card_back.png" class="million"/>
+			</c:if>
+			<c:if test="${order == 5}">
+				<div class="container">
+					<form action="./MillionairePlay" method="get">
+						<button class="btn-open">GAME START</button>
+					</form>
+				</div>
+			</c:if>
+		</div>
+		<div class="handback3">
+			<p>com3<br>手札：${com3.size()}枚<br>
+				<c:if test="${ranking.get(0) == 'com3'}"><img src="img/first.png" class="rank"/></c:if>
+				<c:if test="${ranking.get(1) == 'com3'}"><img src="img/second.png" class="rank"/></c:if></p>
+			<c:if test="${com3.size() != 0}">
+				<img src="card/card_back.png" class="scard"/>
+			</c:if>
+		</div>
 	</div>
-</div>
-
-<div class="handback4">
-<p>手札：${player.size()}枚</p>
+	<div class="handback4">
+	<c:if test="${ranking.get(0) == 'player'}"><img src="img/first.png" class="rank"/></c:if>
+	<c:if test="${ranking.get(1) == 'player'}"><img src="img/second.png" class="rank"/></c:if>
 	<c:choose>
 		<c:when test="${order == 1 && player.size() != 0}">
 			<form action="./MillionairePlay" method="post">
-				<table>
+				<table class="tablecenter">
 					<tbody>
 						<tr>
 							<td class="taste">
@@ -111,7 +118,7 @@ if(order == 2 || order == 3 || order == 4){
 			</c:forEach>
 		</c:otherwise>
 		</c:choose>
-</div>
+	</div>
 </main>
 <jsp:include page="include/footer.jsp"/>
 </div>

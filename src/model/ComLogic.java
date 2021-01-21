@@ -22,7 +22,8 @@ public class ComLogic {
 
 			int count = 1;
 			for(int i = 0; i < hands.size() - 1; i++) {
-				if(hands.get(i).getRank() == hands.get(i + 1).getRank()) {
+				if(hands.get(i).getRank() == hands.get(i + 1).getRank() ||
+						(hands.get(i).getRank() == 14 && hands.get(i + 1).getRank() == 15)) {
 					count++;
 				}else {
 					break;
@@ -37,6 +38,12 @@ public class ComLogic {
 		}else if(gabage.size() == 1) {
 
 			for(int i = 0; i < hands.size(); i++) {
+				if((gabage.get(0).getRank() == 14 || gabage.get(0).getRank() == 15)
+						&& hands.get(i).equals(new Card(Suit.spade,3))) {
+					gabagelist.add(hands.get(i));
+					hands.remove(i);
+					break;
+				}
 				if(gabage.get(0).getRank() == 14 || gabage.get(0).getRank() == 15) {
 					break;
 				}

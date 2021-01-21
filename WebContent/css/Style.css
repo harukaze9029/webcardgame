@@ -11,6 +11,9 @@
 	justify-content: center;
 	display: flex;
 }
+.tablecenter{
+	text-align: center;
+}
 .hand {
 	justify-content: space-evenly;
 	display: flex;	flex-direction: row;
@@ -106,6 +109,19 @@ body,
 #burst{
 	color:#FF33CC;
 }
+.blackboard-box{
+  background: #104300;
+  padding: 1em;
+  border: 8px solid #b3b3b3;
+  box-shadow: 2px 2px 4px #999, 2px 2px 2px #020 inset;
+}
+
+.blackboard-box p{
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  text-shadow: 0 0 2px #fff;
+}
 .example2 {	padding: 0.5em 1em;	background: #52c234;
 margin-block-start: 0.5em;
     margin-block-end: 0.5em;	}
@@ -142,7 +158,7 @@ footer {	margin-top: auto;	}
 	display: inline-flex;
 	justify-content:center;
 	padding: 0.5em 1em;
-    margin: 2em 0;
+    margin: 0.5em 0;
     font-weight: bold;
     border: solid 7px #FFF;
     border-radius: 10px;
@@ -151,7 +167,7 @@ footer {	margin-top: auto;	}
 	display: inline-flex;
 	justify-content:center;
 	padding: 0.5em 1em;
-    margin: 2em 0;
+    margin: 0.5em 0;
     font-weight: bold;
     border: solid 7px #FFF;
     border-radius: 10px;
@@ -166,7 +182,7 @@ footer {	margin-top: auto;	}
 }
 .field{
 	padding: 0.5em 1em;
-    margin: 2em 0;
+    margin: 0.5em 0;
     font-weight: bold;
     border: solid 7px #FFF;
     border-radius: 10px;
@@ -224,16 +240,17 @@ justify-content:space-between;
 	margin-left: auto;
 	margin-right: auto;
 }
-@media screen and (max-width: 480px) {
-
+.rank{	height:80px;	width:120px;	}
+@media screen and (max-width:480px) {
 .result {	justify-content: center;	display: block;	}
-.hand {	justify-content: space-evenly;	display: table;	flex-direction: row;	align-items: flex-start;	  margin: 0 auto;}
+.hand {	justify-content: space-evenly;	display: table;
+	flex-direction: row;	align-items: flex-start;	  margin: 0 auto;}
 .host{	width: 100% ;	margin-left: auto;	margin-right: auto;}
 .player{	width: 100% ;	margin-left: auto;	margin-right: auto;}
 .trump {	width: 100% ;	}
 .btn03 {	WIDTH: 200px; HEIGHT: 40px	}
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width:480px) {
 
 .Win,.Lose,.Draw,.resultback{
 	width: 390px;
