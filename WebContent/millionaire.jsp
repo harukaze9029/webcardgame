@@ -44,6 +44,7 @@ if(order == 2 || order == 3 || order == 4){
 				<c:if test="${order == 4}">com3さんの番</c:if>
 				<c:if test="${order == 1}">あなたの番</c:if>
 				<br>
+				<c:if test="${REVO == 1}">革命</c:if>
 				<c:if test="${flush8 == 1}">8切り</c:if>
 				<c:if test="${GK == 1}">スぺ3返し</c:if>
 			</p>
@@ -99,7 +100,7 @@ if(order == 2 || order == 3 || order == 4){
 							<td class="taste">
 							<div>
 							<c:forEach begin="0" end="${player.size() - 1}" step="1" varStatus="i">
-								<label>
+								<label class="millilabel" >
 									<input type="checkbox" name="checkbox" value="${i.index}" class="location_checkbox">
 									<img src="card/card_${player[i.index].suit}_${player[i.index].rank}.png" class="million"/>
 								</label>

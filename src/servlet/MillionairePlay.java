@@ -39,6 +39,7 @@ public class MillionairePlay extends HttpServlet {
 		int order = (int) session.getAttribute("order");
 		int count = (int) session.getAttribute("count");
 		int playernum = (int)session.getAttribute("playernum");
+		int revo = (int)session.getAttribute("REVO");
 		//順番決め
 		if(order == 5) {
 			if(player.get(0).equals(new Card(Suit.club,3))) {
@@ -83,12 +84,15 @@ public class MillionairePlay extends HttpServlet {
 			pass = "0";
 		}
 		int passcn = Integer.parseInt(pass);
-		System.out.println(passcn + " " + order);
 		ComLogic cl = new ComLogic();
 		//各番のカード出し処理
 		//com1
 		if(order == 2 && com1.size() != 0) {
-			session.setAttribute("com1",cl.comLogic(com1,gabage));
+			if(revo == 0) {
+				session.setAttribute("com1",cl.comLogic(com1,gabage));
+			}else if(revo == 1){
+				session.setAttribute("com1", cl.revocomLogic(com1, gabage));
+			}
 			//ほかのプレーヤーが上がっている状態の時に飛ばす処理
 			if(com2.size() == 0 && com3.size() == 0) {
 				session.setAttribute("order", 1);
@@ -111,10 +115,18 @@ public class MillionairePlay extends HttpServlet {
 					session.setAttribute("flush8", 1);
 				}
 				if(gabage.size() != 0 && (gabage.get(0).getRank() == 14 || gabage.get(0).getRank() == 15)
-						&& cl.getGabagelist().get(0).equals(new Card(Suit.spade,3))) {
+						&& cl.getGabagelist().get(0).equals(new Card(Suit.spade,3)) && cl.getGabagelist().size() == 1) {
 					session.setAttribute("order",2);
 					session.removeAttribute("gabage");
 					session.setAttribute("GK", 1);
+				}
+				//革命処理
+				if(gabage.size() >= 4) {
+					if(revo == 0) {
+						session.setAttribute("REVO", 1);
+					}else if(revo == 1) {
+						session.setAttribute("REVO", 0);
+					}
 				}
 				session.removeAttribute("done");
 			}
@@ -128,7 +140,11 @@ public class MillionairePlay extends HttpServlet {
 			session.setAttribute("playernum", playernum);
 			//com2
 		}else if(order == 3 && com2.size() != 0) {
-			session.setAttribute("com2",cl.comLogic(com2,gabage));
+			if(revo == 0) {
+				session.setAttribute("com2",cl.comLogic(com2,gabage));
+			}else if(revo == 1){
+				session.setAttribute("com2", cl.revocomLogic(com2, gabage));
+			}
 			if(com3.size() == 0 && player.size() == 0) {
 				session.setAttribute("order", 2);
 			}else if(com3.size() == 0){
@@ -148,10 +164,18 @@ public class MillionairePlay extends HttpServlet {
 					session.setAttribute("flush8", 1);
 				}
 				if(gabage.size() != 0 && (gabage.get(0).getRank() == 14 || gabage.get(0).getRank() == 15)
-						&& cl.getGabagelist().get(0).equals(new Card(Suit.spade,3))) {
+						&& cl.getGabagelist().get(0).equals(new Card(Suit.spade,3)) && cl.getGabagelist().size() == 1) {
 					session.setAttribute("order",3);
 					session.removeAttribute("gabage");
 					session.setAttribute("GK", 1);
+				}
+				//革命処理
+				if(gabage.size() >= 4) {
+					if(revo == 0) {
+						session.setAttribute("REVO", 1);
+					}else if(revo == 1) {
+						session.setAttribute("REVO", 0);
+					}
 				}
 				session.removeAttribute("done");
 			}
@@ -165,7 +189,11 @@ public class MillionairePlay extends HttpServlet {
 			session.setAttribute("playernum", playernum);
 			//com3
 		}else if(order == 4 && com3.size() != 0) {
-			session.setAttribute("com3",cl.comLogic(com3,gabage));
+			if(revo == 0) {
+				session.setAttribute("com3",cl.comLogic(com3,gabage));
+			}else if(revo == 1){
+				session.setAttribute("com3", cl.revocomLogic(com3, gabage));
+			}
 			if(player.size() == 0 && com1.size() == 0) {
 				session.setAttribute("order", 3);
 			}else if(player.size() == 0){
@@ -186,10 +214,18 @@ public class MillionairePlay extends HttpServlet {
 					session.setAttribute("flush8", 1);
 				}
 				if(gabage.size() != 0 && (gabage.get(0).getRank() == 14 || gabage.get(0).getRank() == 15)
-						&& cl.getGabagelist().get(0).equals(new Card(Suit.spade,3))) {
+						&& cl.getGabagelist().get(0).equals(new Card(Suit.spade,3)) && cl.getGabagelist().size() == 1) {
 					session.setAttribute("order",4);
 					session.removeAttribute("gabage");
 					session.setAttribute("GK", 1);
+				}
+				//革命処理
+				if(gabage.size() >= 4) {
+					if(revo == 0) {
+						session.setAttribute("REVO", 1);
+					}else if(revo == 1) {
+						session.setAttribute("REVO", 0);
+					}
 				}
 				session.removeAttribute("done");
 			}
@@ -247,6 +283,7 @@ public class MillionairePlay extends HttpServlet {
 			}
 		}
 
+
 		//パスの処理
 		if(passcn == playernum - 1) {
 			if(order == 3) {
@@ -293,8 +330,6 @@ public class MillionairePlay extends HttpServlet {
 			response.sendRedirect("MillionaireResult");
 			return;
 		}
-		System.out.println(passcn + " " + order + " " + playernum);
-		System.out.println();
 		/*
 		try {
 			Thread.sleep(1000); // 1秒間だけ処理を止める
@@ -315,6 +350,7 @@ public class MillionairePlay extends HttpServlet {
 		List<Card> com1 = (List<Card>)session.getAttribute("com1");
 		List<Card> com2 = (List<Card>)session.getAttribute("com2");
 		int playernum = (int)session.getAttribute("playernum");
+		int revo = (int)session.getAttribute("REVO");
 		String pass = (String)session.getAttribute("pass");
 		session.removeAttribute("flush8");
 		session.removeAttribute("GK");
@@ -344,7 +380,12 @@ public class MillionairePlay extends HttpServlet {
 			gabage.add(playerhand.get(removeCards[i]));
 		}
 		Playcheck pc = new Playcheck();
-		if(pc.handsCheck(gabage,gabagebefore) == false) {
+		if(revo == 0 && pc.handsCheck(gabage,gabagebefore) == false) {
+			session.setAttribute("player",playerhand);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("millionaire.jsp");
+			dispatcher.forward(request, response);
+			return;
+		}else if(revo == 1 && pc.revohandsCheck(gabage,gabagebefore) == false) {
 			session.setAttribute("player",playerhand);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("millionaire.jsp");
 			dispatcher.forward(request, response);
@@ -379,12 +420,19 @@ public class MillionairePlay extends HttpServlet {
 			session.setAttribute("flush8", 1);
 		}
 		if(gabagebefore.size() != 0 &&(gabagebefore.get(0).getRank() == 14 || gabagebefore.get(0).getRank() == 15)
-				&& gabage.get(0).equals(new Card(Suit.spade,3))) {
+				&& gabage.get(0).equals(new Card(Suit.spade,3)) && gabagebefore.size() == 1) {
 			session.setAttribute("order",1);
 			session.removeAttribute("gabage");
 			session.setAttribute("GK", 1);
 		}
-
+		//革命処理
+		if(gabage.size() >= 4) {
+			if(revo == 0) {
+				session.setAttribute("REVO", 1);
+			}else if(revo == 1) {
+				session.setAttribute("REVO", 0);
+			}
+		}
 		session.setAttribute("pass", Integer.toString(passcn));
 		RequestDispatcher dispatcher = request.getRequestDispatcher("millionaire.jsp");
 		dispatcher.forward(request, response);
